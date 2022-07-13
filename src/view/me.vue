@@ -2,7 +2,8 @@
   <div>
     <van-button type="primary" @click="goMe1">去me1组件</van-button>
     <van-button type="primary" @click="goOut">退出登录</van-button>
-    <van-cell title="我的地址" is-link @click="goMyAddress"/>
+    <van-cell  title="我的地址" is-link @click="goMyAddress" icon="location-o"/>
+    <van-cell title="购物车" is-link @click="shoppingCart" icon="shopping-cart-o"/>
   </div>
 </template>
 <script>
@@ -28,10 +29,14 @@ export default {
         Toast.success("退出成功");
       }
     };
+    const shoppingCart=()=>{
+      router.push('/shoppingCart')
+    }
     return {
       goMe1,
       goOut,
-      goMyAddress
+      goMyAddress,
+      shoppingCart
     };
   },
 };

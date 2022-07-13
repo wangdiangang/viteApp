@@ -1,5 +1,5 @@
 <template>
-  <van-nav-bar
+  <van-nav-bar fixed
     title="标题"
     left-text="返回"
     left-arrow

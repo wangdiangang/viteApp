@@ -11,6 +11,13 @@ const routes = [
         component: () => import('@/view/home.vue')
     },
     {
+        path: '/productDetail',
+        name: 'productDetail',
+        meta: {
+        },
+        component: () => import('@/view/home/productDetail.vue')
+    },
+    {
         path: '/login',
         name: 'login',
         component: () => import('@/view/login.vue')
@@ -47,6 +54,14 @@ const routes = [
             isLogin:true
         },
         component:()=>import('@/view/me/editAddress.vue')
+    },
+    {
+        path:'/shoppingCart',
+        name:'shoppingCart',
+        meta:{
+            isLogin:true
+        },
+        component:()=>import('@/view/me/shoppingCart.vue')
     },
     {
         path: '/other',
