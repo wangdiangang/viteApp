@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header_top">
     <van-nav-bar fixed
       title="标题"
       left-text="返回"

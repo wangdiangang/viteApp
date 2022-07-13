@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory } from 'vue-router';
+import { createRouter, createWebHistory ,createWebHashHistory} from 'vue-router';
 const routes = [
     { path: '/', redirect: '/home' },
     {
@@ -32,36 +32,36 @@ const routes = [
         component: () => import("@/view/me.vue")
     },
     {
-        path:'/me1',
-        name:'me1',
-        meta:{
-            isLogin:true
+        path: '/me1',
+        name: 'me1',
+        meta: {
+            isLogin: true
         },
-        component:()=>import('@/view/me/me1.vue')
+        component: () => import('@/view/me/me1.vue')
     },
     {
-        path:'/myAddress',
-        name:'myAddress',
-        meta:{
-            isLogin:true
+        path: '/myAddress',
+        name: 'myAddress',
+        meta: {
+            isLogin: true
         },
-        component:()=>import('@/view/me/myAddress.vue')
+        component: () => import('@/view/me/myAddress.vue')
     },
     {
-        path:'/editAddress',
-        name:'editAddress',
-        meta:{
-            isLogin:true
+        path: '/editAddress',
+        name: 'editAddress',
+        meta: {
+            isLogin: true
         },
-        component:()=>import('@/view/me/editAddress.vue')
+        component: () => import('@/view/me/editAddress.vue')
     },
     {
-        path:'/shoppingCart',
-        name:'shoppingCart',
-        meta:{
-            isLogin:true
+        path: '/shoppingCart',
+        name: 'shoppingCart',
+        meta: {
+            isLogin: true
         },
-        component:()=>import('@/view/me/shoppingCart.vue')
+        component: () => import('@/view/me/shoppingCart.vue')
     },
     {
         path: '/other',
@@ -76,7 +76,7 @@ const routes = [
         path: '/other1',
         name: 'other1',
         meta: {
-            isLogin:true
+            isLogin: true
         },
         component: () => import("@/view/other/other1.vue")
     },
@@ -84,7 +84,7 @@ const routes = [
         path: '/lucky',
         name: 'lucky',
         meta: {
-            isLogin:true
+            isLogin: true
         },
         component: () => import("@/view/other/lucky.vue")
     },
@@ -92,21 +92,21 @@ const routes = [
         path: '/skeleton',
         name: 'skeleton',
         meta: {
-            isLogin:true
+            isLogin: true
         },
         component: () => import("@/view/other/skeleton.vue")
     }
 
 ]
 const router = createRouter({
-    history: createWebHistory(),
+    history: createWebHashHistory(),
     routes,
 });
-router.beforeEach((to,from,next)=>{
-    const user=localStorage.getItem('user')
-    if(user!='admin'&&to.name!='login'&&to.meta.isLogin){
+router.beforeEach((to, from, next) => {
+    const user = localStorage.getItem('user')
+    if (user != 'admin' && to.name != 'login' && to.meta.isLogin) {
         next('/login')
-    }else{
+    } else {
         next()
     }
 })

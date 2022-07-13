@@ -1,6 +1,6 @@
 
 <template>
-  <div class="shop">
+  <div class="shop header_top">
     <van-nav-bar fixed
       title="购物车"
       left-text="返回"
