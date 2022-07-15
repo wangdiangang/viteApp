@@ -8,7 +8,7 @@ export default defineConfig({
     host:'0.0.0.0',
     proxy:{
       '/service':{
-        target: 'https://escloudt.qinjia001.com/',
+        target: 'http://127.0.0.1:8000',
         changeOrigin:true,
         configure:(proxy,options)=>{
           

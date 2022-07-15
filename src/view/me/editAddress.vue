@@ -1,7 +1,7 @@
 <template>
   <div class="header_top">
     <van-nav-bar fixed
-      title="标题"
+      title="地址吧"
       left-text="返回"
       left-arrow
       @click-left="onClickLeft"

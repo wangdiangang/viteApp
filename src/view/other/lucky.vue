@@ -1,39 +1,42 @@
 <template>
-  <van-nav-bar fixed
-    title="标题"
-    left-text="返回"
-    left-arrow
-    @click-left="onClickLeft"
-  />
-  <van-field v-model="luckyNum" label="中奖数字" />
-  <van-field v-model="luckyTime" label="转动时间/s" />
-  <LuckyWheel
-    ref="myLucky"
-    width="300px"
-    height="300px"
-    :prizes="prizes"
-    :blocks="blocks"
-    :buttons="buttons"
-    @start="startCallback"
-    @end="endCallback"
-  />
-  <LuckyGrid
-    ref="myLuckyGrid"
-    width="300px"
-    height="300px"
-    :prizes="prizesGrid"
-    :blocks="blocksGrid"
-    :buttons="buttonsGrid"
-    @start="startCallbackGrid"
-    @end="endCallbackGrid"
-  />
-  <Machine />
+  <div class="header_top">
+    <van-nav-bar
+      fixed
+      title="抽奖"
+      left-text="返回"
+      left-arrow
+      @click-left="onClickLeft"
+    />
+    <van-field v-model="luckyNum" label="中奖数字" />
+    <van-field v-model="luckyTime" label="转动时间/s" />
+    <LuckyWheel
+      ref="myLucky"
+      width="300px"
+      height="300px"
+      :prizes="prizes"
+      :blocks="blocks"
+      :buttons="buttons"
+      @start="startCallback"
+      @end="endCallback"
+    />
+    <LuckyGrid
+      ref="myLuckyGrid"
+      width="300px"
+      height="300px"
+      :prizes="prizesGrid"
+      :blocks="blocksGrid"
+      :buttons="buttonsGrid"
+      @start="startCallbackGrid"
+      @end="endCallbackGrid"
+    />
+    <Machine />
+  </div>
 </template>
 <script setup>
 import Machine from "./machine.vue";
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import {Toast} from "vant"
+import { Toast } from "vant";
 const components = {
   Machine,
 };
@@ -195,11 +198,11 @@ const startCallbackGrid = () => {
 // 抽奖结束会触发end回调
 const endCallback = (prize) => {
   console.log("中奖结束", prize);
-  Toast(`中奖${luckyNum.value}`)
+  Toast(`中奖${luckyNum.value}`);
 };
 const endCallbackGrid = (prize) => {
   console.log("中奖结束", prize);
- Toast(`中奖${luckyNum.value}`)
+  Toast(`中奖${luckyNum.value}`);
 };
 const onClickLeft = () => {
   router.back();

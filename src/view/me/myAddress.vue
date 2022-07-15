@@ -1,7 +1,7 @@
 <template>
   <div class="header_top">
     <van-nav-bar fixed
-      title="标题"
+      title="我的地址"
       left-text="返回"
       left-arrow
       @click-left="onClickLeft"
@@ -24,9 +24,7 @@ import { Toast } from "vant";
 
 const router = useRouter();
 const chosenAddressId = ref("1");
-
-onMounted(() => {
-  let addressList = [
+let addressList = [
     {
       id: "1",
       name: "张三",
@@ -41,14 +39,18 @@ onMounted(() => {
       address: "浙江省杭州市拱墅区莫干山路 50 号",
     },
   ];
+onMounted(() => {
+  
 
   if (!localStorage.getItem("addressList")) {
     localStorage.setItem("addressList", JSON.stringify(addressList));
+  }else{
+    
   }
 });
-const list = JSON.parse(localStorage.getItem("addressList"));
+const list = JSON.parse(localStorage.getItem("addressList"))||addressList;
 let chose = list.find((item) => {
-  return (item.isDefault = true);
+  return (item.isDefault == true);
 });
 chosenAddressId.value = chose.id;
 const disabledList = [
