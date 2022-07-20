@@ -1,6 +1,6 @@
 <template>
   <div>
-    <van-button @click="goOther">去往其他1sa页面</van-button>
+    <van-button @click="goOther">去往其他112页面</van-button>
     <van-button @click="goSke">去往骨架屏页面</van-button>
     <van-button type="success" @click="lucky">去抽奖</van-button>
     <van-button type="success" @click="get">接口qin</van-button>
@@ -9,6 +9,7 @@
     <van-button type="success" @click="getAli">阿里服务器接口</van-button>
     <van-button type="success" @click="interface11">接口一</van-button>
     <van-button type="success" @click="interface12">接口二</van-button>
+    <van-button type="success" @click="qita">测试一个其他的接口</van-button>
   </div>
 </template>
 <script>
@@ -75,7 +76,13 @@ export default {
         Toast(`接口二获取${res}`)
       });
     };
+    const qita=()=>{
+      axios.post('http://localhost:3000/login',{userName:'你好啊'}).then(res=>{
+        console.log('resresresres',res);
+      })
+    }
     return {
+      qita,
       goOther,
       goSke,
       get,
