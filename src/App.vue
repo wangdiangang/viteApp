@@ -4,9 +4,9 @@
     <tab-bar v-if="$route.meta.showTabbar"></tab-bar>
     <router-view v-slot="{ Component }">
       <keep-alive>
-        <component :key="Component" :is="Component" v-if="$route.meta.keepAlive"/>
+        <component :key="$route.name" :is="Component" v-if="$route.meta.keepAlive"/>
       </keep-alive>
-      <component :is="Component" :key="Component"  v-if="!$route.meta.keepAlive"/>
+      <component :is="Component" :key="$route.name"  v-if="!$route.meta.keepAlive"/>
     </router-view>
   </div>
 </template>
@@ -19,7 +19,6 @@ export default {
   setup() {},
 };
 </script>
-
 <style>
 #app {
 }

@@ -1,5 +1,6 @@
 <template>
   <div>
+      <van-field v-model="value" label="文本" placeholder="请输入用户名" />
     <van-button @click="goOther">去往其他112页面</van-button>
     <van-button @click="goSke">去往骨架屏页面</van-button>
     <van-button type="success" @click="lucky">去抽奖</van-button>
@@ -13,12 +14,14 @@
   </div>
 </template>
 <script>
+import{ref} from "vue"
 import { useRouter } from "vue-router";
 import { getCode, interface1, interface2, getName1 } from "../api/api.js";
 import axios from "axios";
 import { Toast } from "vant";
 export default {
   setup() {
+    const value=ref('')
     const router = useRouter();
     const goOther = () => {
       router.push("/other1");
@@ -82,6 +85,7 @@ export default {
       })
     }
     return {
+      value,
       qita,
       goOther,
       goSke,

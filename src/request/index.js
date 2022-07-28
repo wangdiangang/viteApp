@@ -8,6 +8,7 @@ const service = axios.create({
 service.interceptors.request.use(
     config => {
         console.log('请求拦截',config);
+        config['token']=localStorage.getItem('token')||'123456'
         return config
     },
     error => {

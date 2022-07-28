@@ -60,8 +60,10 @@ const changeMoney=()=>{
     })
     totalMoney.value=num
 }
-const checkBoxChange=()=>{
+const checkBoxChange=(value)=>{
+  console.log(value);
     changeMoney()
+  
     
 }
 const changeStep=(val)=>{
