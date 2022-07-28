@@ -106,7 +106,7 @@ setInterval(() => {
 }
 .header_top {
   height: 100vh;
-  background: url("https://cdn.pixabay.com/photo/2016/03/15/18/12/forest-1258845_1280.jpg")
+  background: url("../assets/images/logo_bg.webp")
     no-repeat 100% 100%;
   background-size: cover;
   margin-top: 0;
