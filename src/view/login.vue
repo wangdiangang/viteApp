@@ -1,5 +1,5 @@
 <template>
-  <div class="header_top">
+  <div class="header_top" :style="{backgroundImage:`url(${loginBg}`}">
     <van-nav-bar
       fixed
       title="登录"
@@ -52,9 +52,9 @@
   </div>
 </template>
 <script setup>
+import loginBg from "./images/logo_bg.webp"
 import { useRouter } from "vue-router";
 import { ref, onMounted } from "vue";
-
 const router = useRouter();
 const text = ref("");
 const username = ref("");
@@ -106,8 +106,9 @@ setInterval(() => {
 }
 .header_top {
   height: 100vh;
-  background: url("../assets/images/logo_bg.webp")
-    no-repeat 100% 100%;
+  /* background-image: url("../view/images/logo_bg.webp"); */
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
   background-size: cover;
   margin-top: 0;
 }
